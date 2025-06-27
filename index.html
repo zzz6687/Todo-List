@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-List</title>
+  <link rel="icon" href="favicon.ico"><script defer src="main.js"></script></head>
+  <body>
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+    <div class="container">
+      <div class="sidebar">
+        <h2>Todo-List</h2>
+        <div class="menu-links">
+          <ul>
+            <li>
+              <a href="#" id="allTasks" class="active">
+                <span class="sidebar-text">All</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="todayTasks">
+                <span class="sidebar-text">Today</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="tomorrowTasks">
+                <span class="sidebar-text">Tomorrow</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="weekTasks">
+                <span class="sidebar-text">Week</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="importantTasks">
+                <span class="sidebar-text">Important</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="finishedTasks">
+                <span class="sidebar-text">Finished</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="projects-title-sidebar">
+          <h3>Projects</h3>
+          <button id="addProjectBtn">+</button>
+        </div>
+
+        <div class="project-scrollable">
+          <ul id="project-buttons"></ul>
+        </div>
+        <button id="addTodoBtn" class="add-todo-fixed">+ Add new ToDo</button>
+      </div>
+
+      <div id="main">
+        <div id="projectHeader"></div>
+        <div id="todoContent"></div>
+      </div>
+    </div>
+
+    <div id="projectFormModal" class="projectFormModal hidden">
+      <h3>Add new project</h3>
+      <form id="newProjectForm">
+        <label for="title">
+          Title:
+          <input type="text" id="formProject-title" required />
+        </label>
+        <label for="description">
+          Description:
+          <input type="text" id="formProject-description" required />
+        </label>
+
+        <div class="form-buttons">
+          <button type="submit">Add Project</button>
+          <button type="button" id="modalCancelProject">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="toDoFormModal" class="toDoFormModal hidden">
+      <h3>Add new Todo</h3>
+      <form id="newToDoForm">
+        <label for="title">
+          Title:
+          <input type="text" id="form-title" required />
+        </label>
+        <label for="dueDate">
+          Due date:
+          <input type="date" id="form-dueDate" required />
+        </label>
+        <label for="project">
+          Choose project:
+          <select id="form-todo-project" required>
+            <option value="">--Select a project--</option>
+          </select>
+        </label>
+        <label for="form-priority" class="inline-checkbox">
+          <input type="checkbox" id="form-priority" />
+          <span>Important</span>
+        </label>
+
+        <div class="form-buttons">
+          <button type="submit">Add Todo</button>
+          <button type="button" id="modalCancelTodo">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <div class="overlay hidden" id="sidebarOverlay"></div>
+  </body>
+</html>
